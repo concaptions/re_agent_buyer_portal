@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RE Agent AI - Telegram Bot for Real Estate Agents</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="icon" type="image/png" href="/static/home-button.png">
+</head>
+<body class="landing-page">
+    <!-- Top Navigation -->
+    <nav class="topbar">
+        <a href="/" class="topbar-brand">
+            <div class="topbar-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5M10.5 21H3m1.5 0h1.5m0 0V3.545M6 21V9.75m0 0h12m-12 0l5.25-6.75M18 9.75l-5.25-6.75" />
+                </svg>
+            </div>
+            <span class="topbar-title">RE Agent AI</span>
+        </a>
+        <div class="nav-menu">
+            <a href="#features" class="nav-link">Features</a>
+            <a href="#forms" class="nav-link">Forms</a>
+            <a href="#how-it-works" class="nav-link">How it Works</a>
+            <a href="/login" class="nav-link nav-link-cta">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0" />
+                </svg>
+                Buyer Portal
+            </a>
+            <a href="/signup" class="nav-link nav-link-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z" />
+                </svg>
+                Sign Up
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-badge">
+                <span class="hero-badge-dot"></span>
+                Powered by Telegram &middot; Available 24/7
+            </div>
+            <h1 class="hero-title">
+                Your AI Real Estate Agent,<br>
+                <span class="hero-title-accent">Right Inside Telegram.</span>
+            </h1>
+            <p class="hero-subtitle">
+                Sign up once, then enrich any property with Zillow data and generate eight ready-to-sign Texas
+                real estate forms — Brokerage Services, 1-4 Residential Contract, HOA, Amendment, Wire Fraud,
+                and more — each delivered as a PDF with a signing link, right in the chat.
+            </p>
+            <div class="hero-cta">
+                <a href="https://t.me/reagent512_bot" target="_blank" rel="noopener" class="btn-primary btn-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71l-4.14-3.05-1.99 1.93c-.23.23-.42.42-.83.42z"/>
+                    </svg>
+                    Start on Telegram
+                </a>
+                <a href="#how-it-works" class="btn-secondary btn-lg">
+                    See how it works
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Chat preview mock -->
+            <div class="chat-preview">
+                <div class="chat-preview-header">
+                    <div class="chat-avatar">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71l-4.14-3.05-1.99 1.93c-.23.23-.42.42-.83.42z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="chat-name">RE Agent</div>
+                        <div class="chat-status"><span class="online-dot"></span>online</div>
+                    </div>
+                </div>
+                <div class="chat-body">
+                    <div class="chat-bubble user">
+                        I want the brokerage services form
+                        <div class="chat-time">9:39 PM</div>
+                    </div>
+                    <div class="chat-bubble bot">
+                        To prepare the Brokerage Services form for you, please provide the following details all at once:
+                        <ol class="chat-list">
+                            <li>Buyer Phone Number</li>
+                            <li>Buyer/Tenant/Seller/Landlord Initials</li>
+                            <li>Date</li>
+                        </ol>
+                        Once you share these details, I'll generate the form for you right away!
+                        <div class="chat-time">9:39 PM</div>
+                    </div>
+                    <div class="chat-bubble user">
+                        Buyer phone number is 1234567<br>
+                        Initials are 'AA'<br>
+                        Date is 23 march, 2026
+                        <div class="chat-time">9:39 PM</div>
+                    </div>
+                    <div class="chat-bubble bot">
+                        Your Brokerage Services form request has been started with the information provided:
+                        <ul class="chat-list chat-list-bare">
+                            <li>Buyer phone number: 1234567</li>
+                            <li>Initials: AA</li>
+                            <li>Date: 23 March, 2026</li>
+                        </ul>
+                        If you need confirmation, a copy of the form, or any other form completed, let me know!
+                        <div class="chat-time">9:39 PM</div>
+                    </div>
+                    <div class="chat-bubble bot">
+                        <div class="chat-doc">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                            </svg>
+                            <div>
+                                <div class="chat-doc-name">Brokerage Services.PDF</div>
+                                <div class="chat-doc-size">178.7 KB</div>
+                            </div>
+                        </div>
+                        Click here to sign: <a href="#" class="chat-link" onclick="event.preventDefault();">http://107.191.45.46:3001/s/PJyMLbeGZTv3ZV</a>
+                        <div class="chat-time">9:39 PM</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+        <div class="section-inner">
+            <div class="section-heading">
+                <div class="eyebrow">Features</div>
+                <h2>Everything an agent needs, in a chat.</h2>
+                <p>No new app to learn. No clunky dashboards. Just message the bot the way you'd text an assistant.</p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21" />
+                        </svg>
+                    </div>
+                    <h3>Zillow Property Enrichment</h3>
+                    <p>Drop an address, get back beds, baths, square footage, year built, lot size, and tax history — automatically pulled from Zillow.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m6.75 12H9m1.5-12H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                        </svg>
+                    </div>
+                    <h3>Eight Auto-Filled Forms</h3>
+                    <p>Brokerage Services, 1-4 Residential Contract, HOA, Amendment, Wire Fraud, Non-Realty Items, Third Party Financing, and Buyer Representation — each generated as a PDF with a signing link.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                        </svg>
+                    </div>
+                    <h3>Telegram-Native</h3>
+                    <p>Works on the messenger you already have open. Mobile, desktop, web — same conversation, same context.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0" />
+                        </svg>
+                    </div>
+                    <h3>Buyer Portal Hand-off</h3>
+                    <p>Every form is delivered to a dedicated buyer portal where your client can review and download, indexed by phone number.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                        </svg>
+                    </div>
+                    <h3>Wire Fraud Protection</h3>
+                    <p>Generate the standard wire fraud advisory in one command and send it the moment money starts moving.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3>24/7 Availability</h3>
+                    <p>Open houses, late-night offers, weekend amendments — the bot doesn't keep office hours, so you don't have to.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Forms Section -->
+    <section id="forms" class="section section-alt">
+        <div class="section-inner">
+            <div class="section-heading">
+                <div class="eyebrow">Forms Library</div>
+                <h2>Eight forms covered. Every deal handled.</h2>
+                <p>The bot generates the standard Texas residential paperwork on demand — just send the details.</p>
+            </div>
+
+            <div class="forms-list">
+                <div class="form-item">
+                    <div class="form-item-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="form-item-name">1-4 Family Residential Contract</div>
+                        <div class="form-item-desc">The TREC standard purchase contract, prefilled with property and party details.</div>
+                    </div>
+                </div>
+
+                <div class="form-item">
+                    <div class="form-item-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zM19.5 12.75v6.75A2.25 2.25 0 0117.25 21.75H5.25A2.25 2.25 0 013 19.5v-12A2.25 2.25 0 015.25 5.25h6.75" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="form-item-name">Amendment</div>
+                        <div class="form-item-desc">Modify executed contracts — sales price, closing date, repairs — without redoing the deal.</div>
+                    </div>
+                </div>
+
+                <div class="form-item">
+                    <div class="form-item-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="form-item-name">Wire Fraud Notice</div>
+                        <div class="form-item-desc">Standard advisory protecting buyers against wire fraud schemes during closing.</div>
+                    </div>
+                </div>
+
+                <div class="form-item">
+                    <div class="form-item-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="form-item-name">Non-Realty Items Addendum</div>
+                        <div class="form-item-desc">List the appliances, fixtures, and personal property the buyer expects to keep.</div>
+                    </div>
+                </div>
+
+                <div class="form-item">
+                    <div class="form-item-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="form-item-name">Brokerage Services</div>
+                        <div class="form-item-desc">The Information About Brokerage Services notice required at first contact in Texas.</div>
+                    </div>
+                </div>
+
+                <div class="form-item">
+                    <div class="form-item-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 21v-4.5m0 0V5.25A2.25 2.25 0 015.25 3h13.5A2.25 2.25 0 0121 5.25v11.25m-18 0h18m-18 0l1.5 4.5m16.5-4.5l-1.5 4.5M9 12h6" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="form-item-name">HOA Addendum</div>
+                        <div class="form-item-desc">Disclose subdivision and HOA terms required when the property is in a mandatory association.</div>
+                    </div>
+                </div>
+
+                <div class="form-item">
+                    <div class="form-item-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="form-item-name">Third Party Financing Addendum</div>
+                        <div class="form-item-desc">Spell out loan terms, approval deadlines, and termination rights when the buyer is financing.</div>
+                    </div>
+                </div>
+
+                <div class="form-item">
+                    <div class="form-item-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="form-item-name">Residential Buyer Representation</div>
+                        <div class="form-item-desc">Lock in the agent-buyer agreement defining representation, term, and compensation.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works Section -->
+    <section id="how-it-works" class="section">
+        <div class="section-inner">
+            <div class="section-heading">
+                <div class="eyebrow">How it Works</div>
+                <h2>From sign-up to signed PDF in four steps.</h2>
+            </div>
+
+            <div class="steps steps-4">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Sign Up for the Bot</h3>
+                    <p>Open the bot in Telegram and complete a one-time agent sign-up. No app install, no separate dashboard.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Send a Property Address</h3>
+                    <p>Drop any address into the chat — the bot pulls live property details from Zillow and confirms back the listing.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Request a Form</h3>
+                    <p>Pick from the eight supported forms and send the few details only you know — buyer info, dates, initials.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Get Signing Link &amp; PDF</h3>
+                    <p>The bot replies with the completed PDF and a signing link your buyer can open right from the message.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section">
+        <div class="cta-card">
+            <h2>Ready to give your assistant a brain?</h2>
+            <p>Start chatting with the bot and close paperwork before your coffee gets cold.</p>
+            <div class="hero-cta">
+                <a href="https://t.me/reagent512_bot" target="_blank" rel="noopener" class="btn-primary btn-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71l-4.14-3.05-1.99 1.93c-.23.23-.42.42-.83.42z"/>
+                    </svg>
+                    Start on Telegram
+                </a>
+                <a href="/login" class="btn-secondary btn-lg">Open Buyer Portal</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="topbar-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5M10.5 21H3m1.5 0h1.5m0 0V3.545M6 21V9.75m0 0h12m-12 0l5.25-6.75M18 9.75l-5.25-6.75" />
+                    </svg>
+                </div>
+                <span>RE Agent AI</span>
+            </div>
+            <div class="footer-meta">&copy; 2026 RE Agent AI. Not affiliated with Zillow or Telegram.</div>
+        </div>
+    </footer>
+</body>
+</html>

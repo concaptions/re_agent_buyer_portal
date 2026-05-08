@@ -1,0 +1,38 @@
+{% extends "signup_layout.html" %}
+{% block title %}Supervisor{% endblock %}
+{% block heading %}Supervisor Details{% endblock %}
+{% block subheading %}Tell us who supervises your transactions.{% endblock %}
+
+{% block content %}
+<form method="POST" action="{{ url_for('signup_supervisor') }}" class="signup-form">
+    <div class="form-grid">
+        <div class="form-group form-group-full">
+            <label for="supervisor">Designated Supervisor <span class="required">*</span></label>
+            <input type="text" id="supervisor" name="Designated Supervisor" value="{{ data.get('Designated Supervisor', '') }}" required>
+        </div>
+        <div class="form-group">
+            <label for="s_phone">Supervisor Phone Number</label>
+            <input type="tel" id="s_phone" name="Supervisor Phone Number" value="{{ data.get('Supervisor Phone Number', '') }}">
+        </div>
+        <div class="form-group">
+            <label for="s_email">Supervisor Email</label>
+            <input type="email" id="s_email" name="Supervisor Email" value="{{ data.get('Supervisor Email', '') }}">
+        </div>
+        <div class="form-group form-group-full">
+            <label for="s_license">Supervisor License Number</label>
+            <input type="text" id="s_license" name="Supervisor License Number" value="{{ data.get('Supervisor License Number', '') }}">
+        </div>
+    </div>
+
+    <div class="signup-actions">
+        <a href="{{ url_for('signup_agent') }}" class="btn-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>
+            Back
+        </a>
+        <button type="submit" class="btn-primary">
+            Next
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+        </button>
+    </div>
+</form>
+{% endblock %}

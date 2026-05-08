@@ -1,0 +1,58 @@
+{% extends "signup_layout.html" %}
+{% block title %}Subdivision Info{% endblock %}
+{% block heading %}Subdivision &amp; Association{% endblock %}
+{% block subheading %}A few last details based on how the subdivision information will be obtained.{% endblock %}
+
+{% block content %}
+<form method="POST" action="{{ url_for('signup_subdivision') }}" class="signup-form">
+    <div class="branch-banner">
+        <div class="branch-banner-label">Subdivision handling</div>
+        <div class="branch-banner-value">{{ branch }}</div>
+    </div>
+
+    <div class="form-grid">
+        {% if branch in ['Seller obtains it', 'Buyer obtains it'] %}
+        <div class="form-group form-group-full">
+            <label for="days">Within how many days after the effective date must it be obtained?</label>
+            <input type="text" id="days" name="Within how many days after the effective date must it be obtained?" value="{{ data.get('Within how many days after the effective date must it be obtained?', '') }}">
+        </div>
+        {% endif %}
+
+        {% if branch == 'Buyer has already received and approved it' %}
+        <div class="form-group form-group-full">
+            <label for="resale_cert">Does the Buyer require an updated resale certificate?</label>
+            <select id="resale_cert" name="Does the Buyer require an updated resale certificate?">
+                {% set rc = data.get('Does the Buyer require an updated resale certificate?', 'Yes') %}
+                <option value="Yes" {% if rc == 'Yes' %}selected{% endif %}>Yes</option>
+                <option value="No" {% if rc == 'No' %}selected{% endif %}>No</option>
+            </select>
+        </div>
+        {% endif %}
+
+        <div class="form-group form-group-full">
+            <label for="max_amount">What is the maximum amount Buyer will pay for Association fees, deposits, and reserves?</label>
+            <input type="text" id="max_amount" name="What is the maximum amount Buyer will pay for Association fees, deposits, and reserves?" value="{{ data.get('What is the maximum amount Buyer will pay for Association fees, deposits, and reserves?', '') }}">
+        </div>
+
+        <div class="form-group form-group-full">
+            <label for="title_co_payer">If the Title Company needs Association information beyond what's required, who pays for it?</label>
+            <select id="title_co_payer" name="If the Title Company needs Association information beyond what's required, who pays for it?">
+                {% set tcp = data.get("If the Title Company needs Association information beyond what's required, who pays for it?", 'Buyer') %}
+                <option value="Buyer" {% if tcp == 'Buyer' %}selected{% endif %}>Buyer</option>
+                <option value="Seller" {% if tcp == 'Seller' %}selected{% endif %}>Seller</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="signup-actions">
+        <a href="{{ url_for('signup_transactions') }}" class="btn-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>
+            Back
+        </a>
+        <button type="submit" class="btn-primary">
+            Submit
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+        </button>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends "signup_layout.html" %}
+{% block title %}Transactions{% endblock %}
+{% block heading %}Transaction Defaults{% endblock %}
+{% block subheading %}Set the standard values you'd like the bot to use when drafting forms.{% endblock %}
+
+{% block content %}
+<form method="POST" action="{{ url_for('signup_transactions') }}" class="signup-form">
+    <div class="form-grid">
+        <div class="form-group">
+            <label for="side">Side Of Deal</label>
+            <select id="side" name="Side Of Deal">
+                {% set side = data.get('Side Of Deal', '') %}
+                <option value="" {% if not side %}selected{% endif %}>Select…</option>
+                <option value="Buyer" {% if side == 'Buyer' %}selected{% endif %}>Buyer</option>
+                <option value="Seller" {% if side == 'Seller' %}selected{% endif %}>Seller</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="title_company">Preferred Title Company <span class="required">*</span></label>
+            <input type="text" id="title_company" name="Preferred Title Company" value="{{ data.get('Preferred Title Company', '') }}" required>
+        </div>
+        <div class="form-group">
+            <label for="closer_name">Closer Name <span class="required">*</span></label>
+            <input type="text" id="closer_name" name="Closer Name" value="{{ data.get('Closer Name', '') }}" required>
+        </div>
+        <div class="form-group">
+            <label for="closer_email">Closer Email <span class="required">*</span></label>
+            <input type="email" id="closer_email" name="Closer Email" value="{{ data.get('Closer Email', '') }}" required>
+        </div>
+        <div class="form-group form-group-full">
+            <label for="earnest">Default Earnest Money <span class="required">*</span></label>
+            <input type="text" id="earnest" name="Default Earnest Money" value="{{ data.get('Default Earnest Money', '') }}" placeholder="Earnest Money amount ($) — good faith deposit paid by Buyer held in escrow" required>
+        </div>
+        <div class="form-group form-group-full">
+            <label for="option_fee">Default Option Fee <span class="required">*</span></label>
+            <input type="text" id="option_fee" name="Default Option Fee" value="{{ data.get('Default Option Fee', '') }}" placeholder="Option Fee amount ($) — one-time fee paid by Buyer to Seller for the Option Period" required>
+        </div>
+        <div class="form-group">
+            <label for="option_period">Default Option Period (days) <span class="required">*</span></label>
+            <input type="number" min="0" id="option_period" name="Default Option Period (days)" value="{{ data.get('Default Option Period (days)', '') }}" placeholder="How many days?" required>
+        </div>
+        <div class="form-group">
+            <label for="survey">Standard survey preference (days) <span class="required">*</span></label>
+            <input type="number" min="0" id="survey" name="Standard survey preference (days)" value="{{ data.get('Standard survey preference (days)', '') }}" placeholder="Days for buyer/seller to provide survey" required>
+        </div>
+        <div class="form-group">
+            <label for="title_payer">Title policy payer <span class="required">*</span></label>
+            <input type="text" id="title_payer" name="Title policy payer" value="{{ data.get('Title policy payer', '') }}" placeholder="Buyer or Seller" required>
+        </div>
+        <div class="form-group">
+            <label for="objection">Default objection period (days) <span class="required">*</span></label>
+            <input type="number" min="0" id="objection" name="Default objection period (days)" value="{{ data.get('Default objection period (days)', '') }}" placeholder="Days to review/object" required>
+        </div>
+        <div class="form-group form-group-full">
+            <label for="warranty">Preferred home warranty <span class="required">*</span></label>
+            <input type="text" id="warranty" name="Preferred home warranty" value="{{ data.get('Preferred home warranty', '') }}" placeholder="Seller to pay $___ toward residential service contract" required>
+        </div>
+        <div class="form-group form-group-full">
+            <label for="leaseback">Standard residential leaseback settings (if commonly used)</label>
+            <input type="text" id="leaseback" name="Standard residential leaseback settings (if commonly used)" value="{{ data.get('Standard residential leaseback settings (if commonly used)', '') }}" placeholder="Seller to remain in possession for ___ days after closing at $___/day">
+        </div>
+        <div class="form-group">
+            <label for="escrow_name">Escrow Agent Name</label>
+            <input type="text" id="escrow_name" name="Escrow Agent Name" value="{{ data.get('Escrow Agent Name', '') }}">
+        </div>
+        <div class="form-group">
+            <label for="escrow_addr">Escrow Agent Address</label>
+            <input type="text" id="escrow_addr" name="Escrow Agent Address" value="{{ data.get('Escrow Agent Address', '') }}">
+        </div>
+        <div class="form-group form-group-full">
+            <label for="subdivision">Who obtains the Subdivision Information?</label>
+            <select id="subdivision" name="Who obtains the Subdivision Information?">
+                {% set sub = data.get('Who obtains the Subdivision Information?', 'Seller obtains it') %}
+                {% for opt in ['Seller obtains it', 'Buyer obtains it', 'Buyer has already received and approved it', 'Buyer does not require it'] %}
+                <option value="{{ opt }}" {% if sub == opt %}selected{% endif %}>{{ opt }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+
+    <div class="signup-actions">
+        <a href="{{ url_for('signup_supervisor') }}" class="btn-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>
+            Back
+        </a>
+        <button type="submit" class="btn-primary">
+            Next
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+        </button>
+    </div>
+</form>
+{% endblock %}

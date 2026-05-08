@@ -1,0 +1,71 @@
+{% extends "signup_layout.html" %}
+{% block title %}Agent Info{% endblock %}
+{% block heading %}Real Estate Agent Info{% endblock %}
+{% block subheading %}Please complete this form to use Real Estate AI from IntevoAI.{% endblock %}
+
+{% block content %}
+<form method="POST" action="{{ url_for('signup_agent') }}" class="signup-form">
+    <div class="form-grid">
+        <div class="form-group">
+            <label for="first_name">Agent First Name <span class="required">*</span></label>
+            <input type="text" id="first_name" name="Agent First Name" value="{{ data.get('Agent First Name', '') }}" required>
+        </div>
+        <div class="form-group">
+            <label for="last_name">Agent Last Name</label>
+            <input type="text" id="last_name" name="Agent Last Name" value="{{ data.get('Agent Last Name', '') }}">
+        </div>
+        <div class="form-group form-group-full">
+            <label for="email">Agent Email <span class="required">*</span></label>
+            <input type="email" id="email" name="Agent Email" value="{{ data.get('Agent Email', '') }}" required>
+        </div>
+        <div class="form-group form-group-full">
+            <label for="phone">Agent Phone Number <span class="required">*</span></label>
+            <input type="tel" id="phone" name="Agent Phone Number" value="{{ data.get('Agent Phone Number', '') }}" required>
+            <div class="form-hint">Please ensure this is the same number you'll use for communicating with the AI Bot.</div>
+        </div>
+        <div class="form-group form-group-full">
+            <label for="license">Agent License Number <span class="required">*</span></label>
+            <input type="text" id="license" name="Agent License Number" value="{{ data.get('Agent License Number', '') }}" required>
+        </div>
+
+        <div class="form-section-divider">Brokerage</div>
+
+        <div class="form-group form-group-full">
+            <label for="firm">Brokerage Firm Name <span class="required">*</span></label>
+            <input type="text" id="firm" name="Brokerage Firm Name" value="{{ data.get('Brokerage Firm Name', '') }}" required>
+        </div>
+        <div class="form-group">
+            <label for="b_email">Brokerage Email <span class="required">*</span></label>
+            <input type="email" id="b_email" name="Brokerage Email" value="{{ data.get('Brokerage Email', '') }}" required>
+        </div>
+        <div class="form-group">
+            <label for="b_phone">Brokerage Phone Number <span class="required">*</span></label>
+            <input type="tel" id="b_phone" name="Brokerage Phone Number" value="{{ data.get('Brokerage Phone Number', '') }}" required>
+        </div>
+        <div class="form-group">
+            <label for="b_license">Brokerage License Number <span class="required">*</span></label>
+            <input type="text" id="b_license" name="Brokerage License Number" value="{{ data.get('Brokerage License Number', '') }}" required>
+        </div>
+        <div class="form-group">
+            <label for="dba">DBA <span class="required">*</span></label>
+            <input type="text" id="dba" name="DBA" value="{{ data.get('DBA', '') }}" required>
+        </div>
+        <div class="form-group form-group-full">
+            <label for="office">Office Address <span class="required">*</span></label>
+            <input type="text" id="office" name="Office Address" value="{{ data.get('Office Address', '') }}" required>
+        </div>
+        <div class="form-group form-group-full">
+            <label for="team">Team Name (If any)</label>
+            <input type="text" id="team" name="Team Name (If any)" value="{{ data.get('Team Name (If any)', '') }}">
+        </div>
+    </div>
+
+    <div class="signup-actions">
+        <a href="/" class="btn-secondary">Cancel</a>
+        <button type="submit" class="btn-primary">
+            Next
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+        </button>
+    </div>
+</form>
+{% endblock %}
