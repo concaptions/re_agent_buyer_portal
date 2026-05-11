@@ -115,6 +115,7 @@ def create_agent_row(data):
         "field_7615": data.get("If the Title Company needs Association information beyond what's required, who pays for it?"),
         "field_7616": data.get("Escrow Agent Name"),
         "field_7617": data.get("Escrow Agent Address"),
+        "field_7608": data.get("Broker Fee"),
         "field_7620": data.get("signup_token"),
     }
     payload = {k: v for k, v in payload.items() if v not in (None, "")}
@@ -186,9 +187,18 @@ def signup_subdivision():
 
         token = data["signup_token"]
         session.pop("signup_data", None)
-        return redirect(f"https://t.me/reagent512_bot?start={token}")
+        session["telegram_url"] = f"https://t.me/reagent512_bot?start={token}"
+        return redirect(url_for('signup_done'))
 
     return render_template('signup/subdivision.html', step=4, branch=branch, data=data)
+
+
+@app.route('/signup/done')
+def signup_done():
+    telegram_url = session.pop("telegram_url", None)
+    if not telegram_url:
+        return redirect(url_for('home'))
+    return render_template('signup/done.html', step=5, telegram_url=telegram_url)
 
 
 if __name__ == '__main__':

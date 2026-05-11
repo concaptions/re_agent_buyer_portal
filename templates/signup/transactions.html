@@ -35,6 +35,10 @@
             <label for="option_fee">Default Option Fee <span class="required">*</span></label>
             <input type="text" id="option_fee" name="Default Option Fee" value="{{ data.get('Default Option Fee', '') }}" placeholder="Option Fee amount ($) — one-time fee paid by Buyer to Seller for the Option Period" required>
         </div>
+        <div class="form-group form-group-full">
+            <label for="broker_fee">Broker Fee <span class="required">*</span></label>
+            <input type="text" id="broker_fee" name="Broker Fee" value="{{ data.get('Broker Fee', '') }}" placeholder="Broker Fee amount ($) charged on the transaction" required>
+        </div>
         <div class="form-group">
             <label for="option_period">Default Option Period (days) <span class="required">*</span></label>
             <input type="number" min="0" id="option_period" name="Default Option Period (days)" value="{{ data.get('Default Option Period (days)', '') }}" placeholder="How many days?" required>
