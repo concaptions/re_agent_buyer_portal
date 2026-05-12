@@ -1,14 +1,36 @@
+import os
 import secrets
 import uuid
 import requests
+from dotenv import load_dotenv
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 
-app = Flask(__name__)
-app.secret_key = 'change-this-to-a-real-secret-key'
+load_dotenv()
 
-BASEROW_BUYER_TABLE_URL = "https://baserow.intevoai.com/api/database/rows/table/684/"
-BASEROW_AGENT_TABLE_URL = "https://baserow.intevoai.com/api/database/rows/table/687/"
-BASEROW_TOKEN = "86aZji1ZIvGQ0hcgoi4I1qDWGiRWv7Bn"
+
+def _required_env(name: str) -> str:
+    value = os.environ.get(name)
+    if not value:
+        raise RuntimeError(
+            f"Missing required environment variable: {name}. "
+            f"Copy .env.example to .env and fill it in, or set it in your container env."
+        )
+    return value
+
+
+app = Flask(__name__)
+app.secret_key = _required_env("FLASK_SECRET_KEY")
+
+BASEROW_BUYER_TABLE_URL = os.environ.get(
+    "BASEROW_BUYER_TABLE_URL",
+    "https://baserow.intevoai.com/api/database/rows/table/684/",
+)
+BASEROW_AGENT_TABLE_URL = os.environ.get(
+    "BASEROW_AGENT_TABLE_URL",
+    "https://baserow.intevoai.com/api/database/rows/table/687/",
+)
+BASEROW_TOKEN = _required_env("BASEROW_TOKEN")
+TELEGRAM_BOT_USERNAME = os.environ.get("TELEGRAM_BOT_USERNAME", "reagent512_bot")
 
 
 def search_buyer(phone):
@@ -187,7 +209,7 @@ def signup_subdivision():
 
         token = data["signup_token"]
         session.pop("signup_data", None)
-        session["telegram_url"] = f"https://t.me/reagent512_bot?start={token}"
+        session["telegram_url"] = f"https://t.me/{TELEGRAM_BOT_USERNAME}?start={token}"
         return redirect(url_for('signup_done'))
 
     return render_template('signup/subdivision.html', step=4, branch=branch, data=data)
