@@ -1,14 +1,25 @@
+import os
 import secrets
 import uuid
 import requests
+from dotenv import load_dotenv
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 
+load_dotenv()
+
+FLASK_SECRET_KEY = os.environ.get("FLASK_SECRET_KEY")
+BASEROW_TOKEN = os.environ.get("BASEROW_TOKEN")
+
+if not FLASK_SECRET_KEY:
+    raise RuntimeError("FLASK_SECRET_KEY is not set. Add it to your .env file.")
+if not BASEROW_TOKEN:
+    raise RuntimeError("BASEROW_TOKEN is not set. Add it to your .env file.")
+
 app = Flask(__name__)
-app.secret_key = 'change-this-to-a-real-secret-key'
+app.secret_key = FLASK_SECRET_KEY
 
 BASEROW_BUYER_TABLE_URL = "https://baserow.intevoai.com/api/database/rows/table/684/"
 BASEROW_AGENT_TABLE_URL = "https://baserow.intevoai.com/api/database/rows/table/687/"
-BASEROW_TOKEN = "86aZji1ZIvGQ0hcgoi4I1qDWGiRWv7Bn"
 
 
 def search_buyer(phone):
